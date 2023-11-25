@@ -2,10 +2,11 @@
 
 namespace BatchCalculator.Interfaces
 {
-    internal interface IIngredient
+    public interface IIngredient
     {
         string GetDisplayName();
         Ingredient SetScale(int value);
         string ToString();
+        int GetScale();
     }
 }

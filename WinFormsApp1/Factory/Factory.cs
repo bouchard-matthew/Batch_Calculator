@@ -4,7 +4,7 @@ using Units = BatchCalculator.Enums.Enums.Units;
 
 namespace BatchCalculator.Factory
 {
-    internal class Factory
+    public class Factory
     {
         public static IIngredient CreateIngredient(string name, double quantity, Units unit, string ingredientType = "ingredient", int scale = 1)
         {

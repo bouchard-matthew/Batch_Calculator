@@ -1,6 +1,6 @@
 ﻿namespace BatchCalculator.Enums
 {
-    internal class Enums
+    public class Enums
     {
         public enum Units
         {

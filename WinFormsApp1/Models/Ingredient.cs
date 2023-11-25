@@ -1,10 +1,12 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using BatchCalculator.Interfaces;
 using Units = BatchCalculator.Enums.Enums.Units;
+[assembly: InternalsVisibleTo("Tests")]
 
 namespace BatchCalculator.Models
 {
-    internal class Ingredient : IIngredient
+    public class Ingredient : IIngredient
     {
         // Look into making this an enum
         private readonly string _name;
@@ -20,6 +22,11 @@ namespace BatchCalculator.Models
             _scale = scale;
         }
 
+        public int GetScale()
+        {
+            return _scale;
+        }
+
         public Ingredient SetScale(int value)
         {
             _scale = value;
@@ -32,7 +39,7 @@ namespace BatchCalculator.Models
             Regex regex = new(@"(?<!^)(?=[A-Z])");
             string[] splitFormattedName = regex.Split(formattedName);
             string joinedFormattedName = string.Join(" ", splitFormattedName);
-            return (joinedFormattedName + "\n");
+            return (joinedFormattedName + "\n").Trim();
         }
 
         public override string ToString()
@@ -48,7 +55,7 @@ namespace BatchCalculator.Models
             return formattedIngredients + " " + GetDisplayName();
         }
 
-        private static string FormatConvertedScaledIngredients(double[] measurements)
+        internal static string FormatConvertedScaledIngredients(double[] measurements)
         {
             string output = String.Empty;
 
@@ -70,6 +77,5 @@ namespace BatchCalculator.Models
 
             return output;
         }
-
     }
 }
