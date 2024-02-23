@@ -1,13 +1,25 @@
 ﻿namespace BatchCalculator.Enums
 {
-    public class Enums
+    public static class Enums
     {
-        public enum Units
+        public enum Unit
         {
             Tsp,
             Tbsp,
             Cup,
             Whole
+        }
+
+        public enum Category
+        {
+            Bread,
+            Cookie
+        }
+
+        public enum State
+        {
+            Wet,
+            Dry
         }
     }
 }

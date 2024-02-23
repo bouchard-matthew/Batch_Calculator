@@ -1,7 +1,3 @@
-using System.Diagnostics;
-using BatchCalculator.Models;
-using BatchCalculator.Models.Breads;
-
 namespace BatchCalculator
 {
     public partial class Form1 : Form
@@ -31,7 +27,7 @@ namespace BatchCalculator
         {
             scaledRecipe.ResetText();
 
-            switch (productDropdown.Text)
+            /*switch (productDropdown.Text)
             {
                 case "Rosemary":
                     scaledRecipe.Text = new Rosemary().Batch(quantityDropdown.SelectedIndex + 1);
@@ -57,7 +53,7 @@ namespace BatchCalculator
                 case "Triple Chocolate":
                     scaledRecipe.Text = new TripleChocolate().Batch(quantityDropdown.SelectedIndex + 1);
                     break;
-            }
+            }*/
 
             scaledRecipe.Show();
             ingredientsLabel.Show();

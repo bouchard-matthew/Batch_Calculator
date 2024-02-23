@@ -1,12 +1,12 @@
-﻿using Units = BatchCalculator.Enums.Enums.Units;
+﻿using static BatchCalculator.Enums.Enums;
 internal static class ConversionUtility
     {
-        public static double ConvertToTsp(Units unit, double quantity)
+        public static double ConvertToTsp(Unit unit, double quantity)
         {
             return unit switch
             {
-                Units.Cup => quantity * 48,
-                Units.Tbsp => quantity * 3,
+                Unit.Cup => quantity * 48,
+                Unit.Tbsp => quantity * 3,
                 _ => quantity
             };
     }
