@@ -1,15 +1,15 @@
-﻿using BatchCalculator.Repositories;
+﻿using BatchCalculator.Services;
 
 namespace BatchCalculator
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private RecipeRepository _recipeRepository = new();
+        private RecipeService _recipeService = new();
 
         /// <summary>
         ///  Clean up any resources being used.
@@ -47,7 +47,7 @@ namespace BatchCalculator
             productDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             productDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
             productDropdown.FormattingEnabled = true;
-            productDropdown.Items.AddRange(_recipeRepository.GetRecipeNames().ToArray());
+            productDropdown.Items.AddRange(_recipeService.GetRecipeNames().ToArray());
             productDropdown.Location = new Point(279, 87);
             productDropdown.Name = "productDropdown";
             productDropdown.Size = new Size(206, 23);
@@ -121,7 +121,7 @@ namespace BatchCalculator
             calculateButton.UseVisualStyleBackColor = true;
             calculateButton.Click += CalculateButtonClicked;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -134,7 +134,7 @@ namespace BatchCalculator
             Controls.Add(scaledRecipe);
             Controls.Add(productLabel);
             Controls.Add(productDropdown);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Batch Calculator";
             ResumeLayout(false);
             PerformLayout();

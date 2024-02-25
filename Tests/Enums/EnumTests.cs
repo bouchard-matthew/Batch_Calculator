@@ -1,4 +1,4 @@
-﻿using Units = BatchCalculator.Enums.Enums.Units;
+﻿using static BatchCalculator.Enums.Enums;
 
 namespace Tests.Enums
 {
@@ -8,10 +8,10 @@ namespace Tests.Enums
         [TestMethod]
         public void EnumValues_AreExpected()
         {
-            Assert.AreEqual(0, (int)Units.Tsp);
-            Assert.AreEqual(1, (int)Units.Tbsp);
-            Assert.AreEqual(2, (int)Units.Cup);
-            Assert.AreEqual(3, (int)Units.Whole);
+            Assert.AreEqual(0, (int)Unit.Tsp);
+            Assert.AreEqual(1, (int)Unit.Tbsp);
+            Assert.AreEqual(2, (int)Unit.Cup);
+            Assert.AreEqual(3, (int)Unit.Whole);
         }
     }
 }

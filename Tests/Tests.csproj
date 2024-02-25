@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WinFormsApp1\BatchCalculator.csproj" />
+    <ProjectReference Include="..\BatchCalculator\BatchCalculator.csproj" />
   </ItemGroup>
 
 </Project>
