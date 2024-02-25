@@ -1,14 +1,15 @@
-﻿using System.Reflection.Metadata;
-using BatchCalculator.Models;
+﻿using BatchCalculator.Services;
 
 namespace BatchCalculator
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        private RecipeService _recipeService = new();
 
         /// <summary>
         ///  Clean up any resources being used.
@@ -46,7 +47,7 @@ namespace BatchCalculator
             productDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             productDropdown.DropDownStyle = ComboBoxStyle.DropDownList;
             productDropdown.FormattingEnabled = true;
-            productDropdown.Items.AddRange(new object[] { "Rosemary", "Cheddar Italian", "Tomato Basil", "Cranberry Walnut", "Mountain Herb", "Farmhouse Molasses", "Hippie Loaf", "Triple Chocolate" });
+            productDropdown.Items.AddRange(_recipeService.GetRecipeNames().ToArray());
             productDropdown.Location = new Point(279, 87);
             productDropdown.Name = "productDropdown";
             productDropdown.Size = new Size(206, 23);
@@ -68,7 +69,6 @@ namespace BatchCalculator
             scaledRecipe.Size = new Size(206, 225);
             scaledRecipe.TabIndex = 2;
             scaledRecipe.Text = "";
-            scaledRecipe.Hide();
             // 
             // clearButton
             // 
@@ -89,7 +89,6 @@ namespace BatchCalculator
             ingredientsLabel.Size = new Size(69, 15);
             ingredientsLabel.TabIndex = 4;
             ingredientsLabel.Text = "Ingredients:";
-            ingredientsLabel.Hide();
             // 
             // quantityLabel
             // 
@@ -122,7 +121,7 @@ namespace BatchCalculator
             calculateButton.UseVisualStyleBackColor = true;
             calculateButton.Click += CalculateButtonClicked;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -135,7 +134,7 @@ namespace BatchCalculator
             Controls.Add(scaledRecipe);
             Controls.Add(productLabel);
             Controls.Add(productDropdown);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Batch Calculator";
             ResumeLayout(false);
             PerformLayout();
